@@ -76,6 +76,7 @@ local function CreateApartmentShell(spawn)
 	local house = CreateObject(`shell_v16low`, spawn.x, spawn.y, spawn.z, false, false, false)
     FreezeEntityPosition(house, true)
 	objects[#objects+1] = house
+	UpdateLightsOnEntity(house)
 	TeleportToInterior(spawn.x + POIOffsets.exit.x, spawn.y + POIOffsets.exit.y, spawn.z + POIOffsets.exit.z, POIOffsets.exit.h)
     return { objects, POIOffsets }
 end
